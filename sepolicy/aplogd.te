@@ -1,0 +1,36 @@
+# AP Logger Daemon
+type aplogd, domain;
+type aplogd_exec, exec_type, file_type;
+
+init_daemon_domain(aplogd)
+
+# Write log files to its /data dir
+allow aplogd aplog_data_file:dir create_dir_perms;
+allow aplogd aplog_data_file:file create_file_perms;
+allow aplogd aplog_data_file:lnk_file create_file_perms;
+
+# Set properties
+unix_socket_connect(aplogd, property, init)
+allow aplogd shell_prop:property_service set;
+
+# Starts as 'root' and lowers privilege
+allow aplogd self:capability { setuid setgid };
+
+# Read logs
+allow aplogd self:capability2 syslog;
+
+# Write to Android Log daemon
+read_logd(aplogd);
+
+# access system/kernel logs
+allow aplogd kernel:system syslog_mod;
+
+unix_socket_connect(aplogd, vold, vold)
+
+# write to sdcard
+allow aplogd { storage_file sdcard_type }:dir create_dir_perms;
+allow aplogd { storage_file sdcard_type }:file create_file_perms;
+
+# write dropbox data files
+allow aplogd dropbox_data_file:dir w_dir_perms;
+allow aplogd dropbox_data_file:file create_file_perms;

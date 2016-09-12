@@ -1,0 +1,4 @@
+# qca data file for aplogd
+type aplog_data_file, file_type, data_file_type;
+type dropbox_data_file, file_type, data_file_type;
+

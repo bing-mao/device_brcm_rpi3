@@ -2,4 +2,7 @@
 /dev/rfkill                     u:object_r:rfkill_device:s0
 /dev/ttyAMA0                    u:object_r:hci_attach_dev:s0
 
+/data/aplogd(/.*)?              u:object_r:aplog_data_file:s0
+/system/bin/aplogd              u:object_r:aplogd_exec:s0
+
 /sys/class/rfkill/rfkill0/state u:object_r:sysfs_bluetooth_writable:s0
