@@ -47,6 +47,7 @@ PRODUCT_COPY_FILES := \
     $(LOCAL_PATH)/firmware/brcm/BCM43430A1.hcd:root/lib/firmware/brcm/BCM43430A1.hcd \
     $(LOCAL_PATH)/bluetooth/bt_vendor.conf:system/etc/bluetooth/bt_vendor.conf \
     hardware/broadcom/wlan/bcmdhd/config/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
+    $(LOCAL_PATH)/ADS7846_Touchscreen.idc:system/usr/idc/ADS7846_Touchscreen.idc \
     $(PRODUCT_COPY_FILES)
 
 PRODUCT_COPY_FILES := \
