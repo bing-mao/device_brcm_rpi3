@@ -7,16 +7,14 @@ PRODUCT_MODEL := Raspberry Pi 3
 PRODUCT_MANUFACTURER := brcm
 
 PRODUCT_AAPT_CONFIG := normal
-PRODUCT_AAPT_PREF_CONFIG := 213dpi
+PRODUCT_AAPT_PREF_CONFIG := ldpi
 # A list of dpis to select prebuilt apk, in precedence order.
-PRODUCT_AAPT_PREBUILT_DPI := mdpi 213dpi hdpi
+PRODUCT_AAPT_PREBUILT_DPI := mdpi ldpi
 
-include frameworks/native/build/tablet-7in-hdpi-1024-dalvik-heap.mk
+include frameworks/native/build/phone-hdpi-512-dalvik-heap.mk
 
 PRODUCT_PACKAGES += \
-    libGLES_mesa \
-    gralloc.$(TARGET_PRODUCT) \
-    hwcomposer.$(TARGET_PRODUCT) \
+    libGLES_android \
     wpa_supplicant \
     wpa_supplicant.conf \
     Launcher2 \
