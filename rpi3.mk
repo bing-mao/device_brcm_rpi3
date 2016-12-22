@@ -58,7 +58,8 @@ DEVICE_PACKAGE_OVERLAYS := device/brcm/rpi3/overlay
 PRODUCT_LOCALES := en_US,ko_KR,ja_JP,zh_CN,hi_IN,en_GB,de_DE,fr_FR,it_IT,ru_RU,es_ES,pt_PT
 
 PRODUCT_PACKAGES += \
-    mtg_mce
+    RMLauncher \
+    rmore \
 
 NUMBER_FAMILY_RESERVED_FIXED_OIDS := 5
 CHILD_LIST_ELEMENTS_PER_BLOCK     := 10
@@ -113,3 +114,4 @@ INCLUDE_ON_THE_FLY_PERSISTENCE    := true
 INCLUDE_AES_GCM_ENCRYPTION        := true
 INCLUDE_TRACE_STURCTURE           := true
 SEGWAY_SUPPORTED                  := true
+FEATURE_DYNAMIC_NET_IFACE         := true

@@ -58,6 +58,18 @@ service aplogd /system/bin/aplogd
     # for kernel logging.
     disabled
 
+service rmore /system/bin/rmore
+   class main
+   user root
+   group root
+   disabled
+
+on property:ore.service.status=start
+   start rmore
+
+on property:ore.service.status=stop
+   stop rmore
+
 on property:init.svc.wpa_supplicant=stopped
     stop dhcpcd_wlan0
 
